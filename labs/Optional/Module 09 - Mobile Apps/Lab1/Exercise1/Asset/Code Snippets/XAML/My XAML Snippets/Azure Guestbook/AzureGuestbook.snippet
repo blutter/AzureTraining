@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+<CodeSnippet Format="1.0.0" >
+	<Header>
+		<SnippetTypes>
+			<SnippetType>Expansion</SnippetType>
+			<SnippetType>SurroundsWith</SnippetType>
+		</SnippetTypes>
+		<Title>Azure Guestbook UI</Title>
+		<Shortcut>Azure Guestbook UI</Shortcut>
+		<Author>Azure Fast Start</Author>
+		<Description>XAML snippet for Azure Guestbook Demo</Description>
+		<HelpUrl>
+		</HelpUrl>
+	</Header>
+	<Snippet>
+	<Code Language="XAML"><![CDATA[
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF023752">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="Assets/CloudSlice.png" Grid.RowSpan="3"/>
+        <Image Source="Assets/AzureLogo.png" Grid.Row="2"  Height="30" Width="150" HorizontalAlignment="Right" Margin="20,20,30,20" VerticalAlignment="Bottom"/>
+        <Image Source="Assets/HomeNote.png" Grid.Row="2" Height="110" Width="115" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,18"/>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18" >
+            <TextBlock Text="Azure Guestbook" Grid.ColumnSpan="2" Style="{StaticResource TitleTextBlockStyle}"  Foreground="White" Margin="18,0"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="18,0,18,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Comment" Foreground="White" Margin="0,10" TextWrapping="Wrap"/>
+            <TextBox Grid.Row="1" Grid.ColumnSpan="2" Name="CommentTextBox" TextWrapping="Wrap" BorderBrush="#FF7A7A7A" />
+            <Button Grid.Row ="2" Grid.Column="0" Name="SubmitButton" Click="SubmitButton_Click" Foreground="White" Margin="0,10">Submit</Button>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Send us feedbacks..." Foreground="White" TextWrapping="Wrap"/>
+            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="RefreshButton" Click="RefreshButton_Click" HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Top" Margin="0,10" >Refresh</Button>
+            <ListView Name="ltvGuestbook" Grid.Row="5" Grid.ColumnSpan="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="2">
+                            <TextBlock Name="textComment" Text="{Binding Description}" MinWidth="200" Margin="5"/>
+                            <TextBlock Margin="5">Posted by :</TextBlock>
+                            <TextBlock Name="textName" Text="{Binding Name}" MinWidth="100" Margin="5" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <StackPanel x:Name="FooterPanel" Grid.Row="2" Margin="0,18,0,18" >
+            <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Bottom" Text="Fill the service guest book" Foreground="White" Margin="110,20,0,0" TextWrapping="Wrap"/>
+        </StackPanel>
+
+    </Grid>
+
+	]]></Code>
+</Snippet>
+</CodeSnippet>
+
+
+</CodeSnippets>
