@@ -23,7 +23,6 @@ RequestReduceContent/
 *.tmp
 *.trace
 [Rr]elease*/
-!/Source/LAPPS.SmokeTests/Stories/Octopus/Release/
 [Dd]ebug*/
 [Pp]ublish/
 ~*.*
@@ -46,13 +45,6 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
-/Source/LAPPS.sln.vsext.disable
-/Source/LAPPS.sln.DotSettings
-/Source/LAPPS.Config.Backend/**/*.zip
-/Source/*.lnk
 /.project
 /Source/**/Pact/Artifacts
 /Source/.pact/*
-
-Tools/AzureDnsSDKExample_2015_05_05.zip
-Tools/AzureDnsSDKExample_2015_05_05/*
